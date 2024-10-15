@@ -1,0 +1,749 @@
+Raw Log Viewer
+View a server log file using basic options.
+Instance:
+
+server
+[2024-10-13T18:14:20.987-0400] [Payara 6.2024.4] [INFO] [NCLS-DEPLOYMENT-02027] [javax.enterprise.system.tools.deployment.autodeploy] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857660987] [levelValue: 800] [[
+  Selecting file /Users/bala/_app_servers/payara6/glassfish/domains/domain1/autodeploy/SchedulerDemo-1.0-SNAPSHOT.war for autodeployment]]
+
+[2024-10-13T18:14:21.136-0400] [Payara 6.2024.4] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857661136] [levelValue: 800] [[
+  No deployment transformer implementation found.]]
+
+[2024-10-13T18:14:21.168-0400] [Payara 6.2024.4] [WARNING] [AS-EJB-00053] [jakarta.enterprise.ejb.container] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857661168] [levelValue: 900] [[
+  The feature use of persistent EJB Timer Service requires Full Java EE Profile to be supported]]
+
+[2024-10-13T18:14:21.169-0400] [Payara 6.2024.4] [INFO] [AS-EJB-00054] [jakarta.enterprise.ejb.container] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857661169] [levelValue: 800] [[
+  Portable JNDI names for EJB BusinessHoursScheduler: [java:global/SchedulerDemo-1.0-SNAPSHOT/BusinessHoursScheduler!com.prime.BusinessHoursScheduler, java:global/SchedulerDemo-1.0-SNAPSHOT/BusinessHoursScheduler]]]
+
+[2024-10-13T18:14:21.172-0400] [Payara 6.2024.4] [WARNING] [AS-EJB-00053] [jakarta.enterprise.ejb.container] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857661172] [levelValue: 900] [[
+  The feature use of persistent EJB Timer Service requires Full Java EE Profile to be supported]]
+
+[2024-10-13T18:14:21.172-0400] [Payara 6.2024.4] [INFO] [AS-EJB-00054] [jakarta.enterprise.ejb.container] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857661172] [levelValue: 800] [[
+  Portable JNDI names for EJB AllDayScheduler: [java:global/SchedulerDemo-1.0-SNAPSHOT/AllDayScheduler!com.prime.AllDayScheduler, java:global/SchedulerDemo-1.0-SNAPSHOT/AllDayScheduler]]]
+
+[2024-10-13T18:14:21.282-0400] [Payara 6.2024.4] [INFO] [] [fish.payara.micro.cdi.extension.ClusteredCDIEventBusImpl] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857661282] [levelValue: 800] [[
+  Clustered CDI Event bus initialized]]
+
+[2024-10-13T18:14:21.291-0400] [Payara 6.2024.4] [INFO] [] [com.prime.BusinessHoursScheduler] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857661291] [levelValue: 800] [[
+  GenericIntervalScheduler started ...]]
+
+[2024-10-13T18:14:21.292-0400] [Payara 6.2024.4] [SEVERE] [] [javax.enterprise.system.container.ejb.com.sun.ejb.containers] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857661292] [levelValue: 1000] [[
+  ejb.create_timer_failure]]
+
+[2024-10-13T18:14:21.293-0400] [Payara 6.2024.4] [SEVERE] [] [javax.enterprise.system.container.ejb.com.sun.ejb.containers] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857661293] [levelValue: 1000] [[
+
+jakarta.ejb.CreateException: Persistent timers are not supported in this setup
+	at com.sun.ejb.containers.EJBTimerService._createTimer(EJBTimerService.java:934)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:899)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:830)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:795)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:784)
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createTimerInternal(EJBTimerServiceWrapper.java:326)
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createSingleActionTimer(EJBTimerServiceWrapper.java:141)
+	at com.prime.GenericIntervalScheduler.scheduleNextRun(GenericIntervalScheduler.kt:69)
+	at com.prime.GenericIntervalScheduler.init(GenericIntervalScheduler.kt:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.BeanCallbackInterceptor.intercept(InterceptorManager.java:1022)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.CallbackInvocationContext.proceed(CallbackInvocationContext.java:204)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:163)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.init(SystemInterceptorProxy.java:125)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.CallbackInterceptor.intercept(InterceptorManager.java:978)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.CallbackInvocationContext.proceed(CallbackInvocationContext.java:204)
+	at org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:81)
+	at org.jboss.weld.module.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.CallbackInterceptor.intercept(InterceptorManager.java:978)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:418)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:381)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:2071)
+	at com.sun.ejb.containers.AbstractSingletonContainer.createSingletonEJB(AbstractSingletonContainer.java:585)
+	at com.sun.ejb.containers.AbstractSingletonContainer$SingletonContextFactory.create(AbstractSingletonContainer.java:743)
+	at com.sun.ejb.containers.AbstractSingletonContainer.instantiateSingletonInstance(AbstractSingletonContainer.java:477)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.initializeSingleton(SingletonLifeCycleManager.java:219)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.initializeSingleton(SingletonLifeCycleManager.java:180)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.doStartup(SingletonLifeCycleManager.java:159)
+	at org.glassfish.ejb.startup.EjbApplication.start(EjbApplication.java:171)
+	at org.glassfish.internal.data.EngineRef.start(EngineRef.java:123)
+	at org.glassfish.internal.data.ModuleInfo.start(ModuleInfo.java:292)
+	at org.glassfish.internal.data.ApplicationInfo.start(ApplicationInfo.java:361)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.initialize(ApplicationLifecycle.java:633)
+	at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:574)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:556)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:552)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:551)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:582)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:574)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:573)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1497)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1879)
+	at org.glassfish.deployment.autodeploy.AutoOperation.run(AutoOperation.java:149)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.deploy(AutoDeployer.java:532)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.deployAll(AutoDeployer.java:437)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.run(AutoDeployer.java:371)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.run(AutoDeployer.java:362)
+	at org.glassfish.deployment.autodeploy.AutoDeployService$1.run(AutoDeployService.java:231)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+]]
+
+[2024-10-13T18:14:21.293-0400] [Payara 6.2024.4] [SEVERE] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857661293] [levelValue: 1000] [[
+  Exception while invoking class org.glassfish.ejb.startup.EjbApplication start method
+jakarta.ejb.EJBException: jakarta.ejb.CreateException: Initialization failed for Singleton BusinessHoursScheduler
+	at com.sun.ejb.containers.AbstractSingletonContainer$SingletonContextFactory.create(AbstractSingletonContainer.java:745)
+	at com.sun.ejb.containers.AbstractSingletonContainer.instantiateSingletonInstance(AbstractSingletonContainer.java:477)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.initializeSingleton(SingletonLifeCycleManager.java:219)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.initializeSingleton(SingletonLifeCycleManager.java:180)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.doStartup(SingletonLifeCycleManager.java:159)
+	at org.glassfish.ejb.startup.EjbApplication.start(EjbApplication.java:171)
+	at org.glassfish.internal.data.EngineRef.start(EngineRef.java:123)
+	at org.glassfish.internal.data.ModuleInfo.start(ModuleInfo.java:292)
+	at org.glassfish.internal.data.ApplicationInfo.start(ApplicationInfo.java:361)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.initialize(ApplicationLifecycle.java:633)
+	at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:574)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:556)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:552)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:551)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:582)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:574)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:573)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1497)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1879)
+	at org.glassfish.deployment.autodeploy.AutoOperation.run(AutoOperation.java:149)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.deploy(AutoDeployer.java:532)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.deployAll(AutoDeployer.java:437)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.run(AutoDeployer.java:371)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.run(AutoDeployer.java:362)
+	at org.glassfish.deployment.autodeploy.AutoDeployService$1.run(AutoDeployService.java:231)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: jakarta.ejb.CreateException: Initialization failed for Singleton BusinessHoursScheduler
+	at com.sun.ejb.containers.AbstractSingletonContainer.createSingletonEJB(AbstractSingletonContainer.java:598)
+	at com.sun.ejb.containers.AbstractSingletonContainer$SingletonContextFactory.create(AbstractSingletonContainer.java:743)
+	... 34 more
+Caused by: jakarta.ejb.EJBException
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createTimerInternal(EJBTimerServiceWrapper.java:331)
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createSingleActionTimer(EJBTimerServiceWrapper.java:141)
+	at com.prime.GenericIntervalScheduler.scheduleNextRun(GenericIntervalScheduler.kt:69)
+	at com.prime.GenericIntervalScheduler.init(GenericIntervalScheduler.kt:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.BeanCallbackInterceptor.intercept(InterceptorManager.java:1022)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.CallbackInvocationContext.proceed(CallbackInvocationContext.java:204)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:163)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.init(SystemInterceptorProxy.java:125)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.CallbackInterceptor.intercept(InterceptorManager.java:978)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.CallbackInvocationContext.proceed(CallbackInvocationContext.java:204)
+	at org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:81)
+	at org.jboss.weld.module.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.CallbackInterceptor.intercept(InterceptorManager.java:978)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:418)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:381)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:2071)
+	at com.sun.ejb.containers.AbstractSingletonContainer.createSingletonEJB(AbstractSingletonContainer.java:585)
+	... 35 more
+Caused by: jakarta.ejb.CreateException: Persistent timers are not supported in this setup
+	at com.sun.ejb.containers.EJBTimerService._createTimer(EJBTimerService.java:934)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:899)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:830)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:795)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:784)
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createTimerInternal(EJBTimerServiceWrapper.java:326)
+	... 66 more
+]]
+
+[2024-10-13T18:14:21.293-0400] [Payara 6.2024.4] [SEVERE] [NCLS-CORE-00026] [javax.enterprise.system.core] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857661293] [levelValue: 1000] [[
+  Exception during lifecycle processing
+jakarta.ejb.EJBException: jakarta.ejb.CreateException: Initialization failed for Singleton BusinessHoursScheduler
+	at com.sun.ejb.containers.AbstractSingletonContainer$SingletonContextFactory.create(AbstractSingletonContainer.java:745)
+	at com.sun.ejb.containers.AbstractSingletonContainer.instantiateSingletonInstance(AbstractSingletonContainer.java:477)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.initializeSingleton(SingletonLifeCycleManager.java:219)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.initializeSingleton(SingletonLifeCycleManager.java:180)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.doStartup(SingletonLifeCycleManager.java:159)
+	at org.glassfish.ejb.startup.EjbApplication.start(EjbApplication.java:171)
+	at org.glassfish.internal.data.EngineRef.start(EngineRef.java:123)
+	at org.glassfish.internal.data.ModuleInfo.start(ModuleInfo.java:292)
+	at org.glassfish.internal.data.ApplicationInfo.start(ApplicationInfo.java:361)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.initialize(ApplicationLifecycle.java:633)
+	at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:574)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:556)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:552)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:551)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:582)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:574)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:573)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1497)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1879)
+	at org.glassfish.deployment.autodeploy.AutoOperation.run(AutoOperation.java:149)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.deploy(AutoDeployer.java:532)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.deployAll(AutoDeployer.java:437)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.run(AutoDeployer.java:371)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.run(AutoDeployer.java:362)
+	at org.glassfish.deployment.autodeploy.AutoDeployService$1.run(AutoDeployService.java:231)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: jakarta.ejb.CreateException: Initialization failed for Singleton BusinessHoursScheduler
+	at com.sun.ejb.containers.AbstractSingletonContainer.createSingletonEJB(AbstractSingletonContainer.java:598)
+	at com.sun.ejb.containers.AbstractSingletonContainer$SingletonContextFactory.create(AbstractSingletonContainer.java:743)
+	... 34 more
+Caused by: jakarta.ejb.EJBException
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createTimerInternal(EJBTimerServiceWrapper.java:331)
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createSingleActionTimer(EJBTimerServiceWrapper.java:141)
+	at com.prime.GenericIntervalScheduler.scheduleNextRun(GenericIntervalScheduler.kt:69)
+	at com.prime.GenericIntervalScheduler.init(GenericIntervalScheduler.kt:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.BeanCallbackInterceptor.intercept(InterceptorManager.java:1022)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.CallbackInvocationContext.proceed(CallbackInvocationContext.java:204)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:163)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.init(SystemInterceptorProxy.java:125)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.CallbackInterceptor.intercept(InterceptorManager.java:978)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.CallbackInvocationContext.proceed(CallbackInvocationContext.java:204)
+	at org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:81)
+	at org.jboss.weld.module.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.CallbackInterceptor.intercept(InterceptorManager.java:978)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:418)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:381)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:2071)
+	at com.sun.ejb.containers.AbstractSingletonContainer.createSingletonEJB(AbstractSingletonContainer.java:585)
+	... 35 more
+Caused by: jakarta.ejb.CreateException: Persistent timers are not supported in this setup
+	at com.sun.ejb.containers.EJBTimerService._createTimer(EJBTimerService.java:934)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:899)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:830)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:795)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:784)
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createTimerInternal(EJBTimerServiceWrapper.java:326)
+	... 66 more
+]]
+
+[2024-10-13T18:14:21.294-0400] [Payara 6.2024.4] [SEVERE] [] [javax.enterprise.system.core] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857661294] [levelValue: 1000] [[
+  Exception while loading the app]]
+
+[2024-10-13T18:14:21.296-0400] [Payara 6.2024.4] [SEVERE] [AS-WEB-GLUE-00192] [jakarta.enterprise.web] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857661296] [levelValue: 1000] [[
+  Undeployment failed for context /scheduler-demo]]
+
+[2024-10-13T18:14:21.300-0400] [Payara 6.2024.4] [SEVERE] [] [javax.enterprise.system.core] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857661300] [levelValue: 1000] [[
+  Exception while loading the app : jakarta.ejb.CreateException: Initialization failed for Singleton BusinessHoursScheduler
+jakarta.ejb.CreateException: Initialization failed for Singleton BusinessHoursScheduler
+	at com.sun.ejb.containers.AbstractSingletonContainer.createSingletonEJB(AbstractSingletonContainer.java:598)
+	at com.sun.ejb.containers.AbstractSingletonContainer$SingletonContextFactory.create(AbstractSingletonContainer.java:743)
+	at com.sun.ejb.containers.AbstractSingletonContainer.instantiateSingletonInstance(AbstractSingletonContainer.java:477)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.initializeSingleton(SingletonLifeCycleManager.java:219)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.initializeSingleton(SingletonLifeCycleManager.java:180)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.doStartup(SingletonLifeCycleManager.java:159)
+	at org.glassfish.ejb.startup.EjbApplication.start(EjbApplication.java:171)
+	at org.glassfish.internal.data.EngineRef.start(EngineRef.java:123)
+	at org.glassfish.internal.data.ModuleInfo.start(ModuleInfo.java:292)
+	at org.glassfish.internal.data.ApplicationInfo.start(ApplicationInfo.java:361)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.initialize(ApplicationLifecycle.java:633)
+	at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:574)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:556)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:552)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:551)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:582)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:574)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:573)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1497)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1879)
+	at org.glassfish.deployment.autodeploy.AutoOperation.run(AutoOperation.java:149)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.deploy(AutoDeployer.java:532)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.deployAll(AutoDeployer.java:437)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.run(AutoDeployer.java:371)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.run(AutoDeployer.java:362)
+	at org.glassfish.deployment.autodeploy.AutoDeployService$1.run(AutoDeployService.java:231)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: jakarta.ejb.EJBException
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createTimerInternal(EJBTimerServiceWrapper.java:331)
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createSingleActionTimer(EJBTimerServiceWrapper.java:141)
+	at com.prime.GenericIntervalScheduler.scheduleNextRun(GenericIntervalScheduler.kt:69)
+	at com.prime.GenericIntervalScheduler.init(GenericIntervalScheduler.kt:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.BeanCallbackInterceptor.intercept(InterceptorManager.java:1022)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.CallbackInvocationContext.proceed(CallbackInvocationContext.java:204)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:163)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.init(SystemInterceptorProxy.java:125)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.CallbackInterceptor.intercept(InterceptorManager.java:978)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.CallbackInvocationContext.proceed(CallbackInvocationContext.java:204)
+	at org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:81)
+	at org.jboss.weld.module.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.CallbackInterceptor.intercept(InterceptorManager.java:978)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:418)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:381)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:2071)
+	at com.sun.ejb.containers.AbstractSingletonContainer.createSingletonEJB(AbstractSingletonContainer.java:585)
+	... 35 more
+Caused by: jakarta.ejb.CreateException: Persistent timers are not supported in this setup
+	at com.sun.ejb.containers.EJBTimerService._createTimer(EJBTimerService.java:934)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:899)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:830)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:795)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:784)
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createTimerInternal(EJBTimerServiceWrapper.java:326)
+	... 66 more
+]]
+
+[2024-10-13T18:14:21.302-0400] [Payara 6.2024.4] [WARNING] [NCLS-DEPLOYMENT-02036] [javax.enterprise.system.tools.deployment.autodeploy] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857661302] [levelValue: 900] [[
+  Error occurred during deployment: Exception while loading the app : jakarta.ejb.CreateException: Initialization failed for Singleton BusinessHoursScheduler. Please see server.log for more details.]]
+
+[2024-10-13T18:14:21.303-0400] [Payara 6.2024.4] [WARNING] [NCLS-DEPLOYMENT-02036] [javax.enterprise.system.tools.deployment.autodeploy] [tid: _ThreadID=127 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857661303] [levelValue: 900] [[
+  [AutoDeploy] Autodeploy failed : /Users/bala/_app_servers/payara6/glassfish/domains/domain1/autodeploy/SchedulerDemo-1.0-SNAPSHOT.war.]]
+
+[2024-10-13T18:14:22.987-0400] [Payara 6.2024.4] [INFO] [NCLS-DEPLOYMENT-02027] [javax.enterprise.system.tools.deployment.autodeploy] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857662987] [levelValue: 800] [[
+  Selecting file /Users/bala/_app_servers/payara6/glassfish/domains/domain1/autodeploy/SchedulerDemo-1.0-SNAPSHOT.war for autodeployment]]
+
+[2024-10-13T18:14:23.174-0400] [Payara 6.2024.4] [INFO] [] [javax.enterprise.system.core] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663174] [levelValue: 800] [[
+  No deployment transformer implementation found.]]
+
+[2024-10-13T18:14:23.214-0400] [Payara 6.2024.4] [WARNING] [AS-EJB-00053] [jakarta.enterprise.ejb.container] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663214] [levelValue: 900] [[
+  The feature use of persistent EJB Timer Service requires Full Java EE Profile to be supported]]
+
+[2024-10-13T18:14:23.215-0400] [Payara 6.2024.4] [INFO] [AS-EJB-00054] [jakarta.enterprise.ejb.container] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663215] [levelValue: 800] [[
+  Portable JNDI names for EJB BusinessHoursScheduler: [java:global/SchedulerDemo-1.0-SNAPSHOT/BusinessHoursScheduler!com.prime.BusinessHoursScheduler, java:global/SchedulerDemo-1.0-SNAPSHOT/BusinessHoursScheduler]]]
+
+[2024-10-13T18:14:23.217-0400] [Payara 6.2024.4] [WARNING] [AS-EJB-00053] [jakarta.enterprise.ejb.container] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663217] [levelValue: 900] [[
+  The feature use of persistent EJB Timer Service requires Full Java EE Profile to be supported]]
+
+[2024-10-13T18:14:23.218-0400] [Payara 6.2024.4] [INFO] [AS-EJB-00054] [jakarta.enterprise.ejb.container] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663218] [levelValue: 800] [[
+  Portable JNDI names for EJB AllDayScheduler: [java:global/SchedulerDemo-1.0-SNAPSHOT/AllDayScheduler!com.prime.AllDayScheduler, java:global/SchedulerDemo-1.0-SNAPSHOT/AllDayScheduler]]]
+
+[2024-10-13T18:14:23.309-0400] [Payara 6.2024.4] [INFO] [] [fish.payara.micro.cdi.extension.ClusteredCDIEventBusImpl] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663309] [levelValue: 800] [[
+  Clustered CDI Event bus initialized]]
+
+[2024-10-13T18:14:23.312-0400] [Payara 6.2024.4] [INFO] [] [com.prime.BusinessHoursScheduler] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663312] [levelValue: 800] [[
+  GenericIntervalScheduler started ...]]
+
+[2024-10-13T18:14:23.313-0400] [Payara 6.2024.4] [SEVERE] [] [javax.enterprise.system.container.ejb.com.sun.ejb.containers] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663313] [levelValue: 1000] [[
+  ejb.create_timer_failure]]
+
+[2024-10-13T18:14:23.313-0400] [Payara 6.2024.4] [SEVERE] [] [javax.enterprise.system.container.ejb.com.sun.ejb.containers] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663313] [levelValue: 1000] [[
+
+jakarta.ejb.CreateException: Persistent timers are not supported in this setup
+	at com.sun.ejb.containers.EJBTimerService._createTimer(EJBTimerService.java:934)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:899)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:830)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:795)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:784)
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createTimerInternal(EJBTimerServiceWrapper.java:326)
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createSingleActionTimer(EJBTimerServiceWrapper.java:141)
+	at com.prime.GenericIntervalScheduler.scheduleNextRun(GenericIntervalScheduler.kt:69)
+	at com.prime.GenericIntervalScheduler.init(GenericIntervalScheduler.kt:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.BeanCallbackInterceptor.intercept(InterceptorManager.java:1022)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.CallbackInvocationContext.proceed(CallbackInvocationContext.java:204)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:163)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.init(SystemInterceptorProxy.java:125)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.CallbackInterceptor.intercept(InterceptorManager.java:978)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.CallbackInvocationContext.proceed(CallbackInvocationContext.java:204)
+	at org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:81)
+	at org.jboss.weld.module.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.CallbackInterceptor.intercept(InterceptorManager.java:978)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:418)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:381)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:2071)
+	at com.sun.ejb.containers.AbstractSingletonContainer.createSingletonEJB(AbstractSingletonContainer.java:585)
+	at com.sun.ejb.containers.AbstractSingletonContainer$SingletonContextFactory.create(AbstractSingletonContainer.java:743)
+	at com.sun.ejb.containers.AbstractSingletonContainer.instantiateSingletonInstance(AbstractSingletonContainer.java:477)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.initializeSingleton(SingletonLifeCycleManager.java:219)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.initializeSingleton(SingletonLifeCycleManager.java:180)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.doStartup(SingletonLifeCycleManager.java:159)
+	at org.glassfish.ejb.startup.EjbApplication.start(EjbApplication.java:171)
+	at org.glassfish.internal.data.EngineRef.start(EngineRef.java:123)
+	at org.glassfish.internal.data.ModuleInfo.start(ModuleInfo.java:292)
+	at org.glassfish.internal.data.ApplicationInfo.start(ApplicationInfo.java:361)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.initialize(ApplicationLifecycle.java:633)
+	at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:574)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:556)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:552)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:551)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:582)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:574)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:573)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1497)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1879)
+	at org.glassfish.deployment.autodeploy.AutoOperation.run(AutoOperation.java:149)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.deploy(AutoDeployer.java:532)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.deployAll(AutoDeployer.java:437)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.run(AutoDeployer.java:371)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.run(AutoDeployer.java:362)
+	at org.glassfish.deployment.autodeploy.AutoDeployService$1.run(AutoDeployService.java:231)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+]]
+
+[2024-10-13T18:14:23.313-0400] [Payara 6.2024.4] [SEVERE] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663313] [levelValue: 1000] [[
+  Exception while invoking class org.glassfish.ejb.startup.EjbApplication start method
+jakarta.ejb.EJBException: jakarta.ejb.CreateException: Initialization failed for Singleton BusinessHoursScheduler
+	at com.sun.ejb.containers.AbstractSingletonContainer$SingletonContextFactory.create(AbstractSingletonContainer.java:745)
+	at com.sun.ejb.containers.AbstractSingletonContainer.instantiateSingletonInstance(AbstractSingletonContainer.java:477)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.initializeSingleton(SingletonLifeCycleManager.java:219)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.initializeSingleton(SingletonLifeCycleManager.java:180)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.doStartup(SingletonLifeCycleManager.java:159)
+	at org.glassfish.ejb.startup.EjbApplication.start(EjbApplication.java:171)
+	at org.glassfish.internal.data.EngineRef.start(EngineRef.java:123)
+	at org.glassfish.internal.data.ModuleInfo.start(ModuleInfo.java:292)
+	at org.glassfish.internal.data.ApplicationInfo.start(ApplicationInfo.java:361)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.initialize(ApplicationLifecycle.java:633)
+	at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:574)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:556)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:552)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:551)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:582)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:574)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:573)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1497)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1879)
+	at org.glassfish.deployment.autodeploy.AutoOperation.run(AutoOperation.java:149)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.deploy(AutoDeployer.java:532)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.deployAll(AutoDeployer.java:437)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.run(AutoDeployer.java:371)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.run(AutoDeployer.java:362)
+	at org.glassfish.deployment.autodeploy.AutoDeployService$1.run(AutoDeployService.java:231)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: jakarta.ejb.CreateException: Initialization failed for Singleton BusinessHoursScheduler
+	at com.sun.ejb.containers.AbstractSingletonContainer.createSingletonEJB(AbstractSingletonContainer.java:598)
+	at com.sun.ejb.containers.AbstractSingletonContainer$SingletonContextFactory.create(AbstractSingletonContainer.java:743)
+	... 34 more
+Caused by: jakarta.ejb.EJBException
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createTimerInternal(EJBTimerServiceWrapper.java:331)
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createSingleActionTimer(EJBTimerServiceWrapper.java:141)
+	at com.prime.GenericIntervalScheduler.scheduleNextRun(GenericIntervalScheduler.kt:69)
+	at com.prime.GenericIntervalScheduler.init(GenericIntervalScheduler.kt:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.BeanCallbackInterceptor.intercept(InterceptorManager.java:1022)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.CallbackInvocationContext.proceed(CallbackInvocationContext.java:204)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:163)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.init(SystemInterceptorProxy.java:125)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.CallbackInterceptor.intercept(InterceptorManager.java:978)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.CallbackInvocationContext.proceed(CallbackInvocationContext.java:204)
+	at org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:81)
+	at org.jboss.weld.module.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.CallbackInterceptor.intercept(InterceptorManager.java:978)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:418)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:381)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:2071)
+	at com.sun.ejb.containers.AbstractSingletonContainer.createSingletonEJB(AbstractSingletonContainer.java:585)
+	... 35 more
+Caused by: jakarta.ejb.CreateException: Persistent timers are not supported in this setup
+	at com.sun.ejb.containers.EJBTimerService._createTimer(EJBTimerService.java:934)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:899)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:830)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:795)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:784)
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createTimerInternal(EJBTimerServiceWrapper.java:326)
+	... 66 more
+]]
+
+[2024-10-13T18:14:23.314-0400] [Payara 6.2024.4] [SEVERE] [NCLS-CORE-00026] [javax.enterprise.system.core] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663314] [levelValue: 1000] [[
+  Exception during lifecycle processing
+jakarta.ejb.EJBException: jakarta.ejb.CreateException: Initialization failed for Singleton BusinessHoursScheduler
+	at com.sun.ejb.containers.AbstractSingletonContainer$SingletonContextFactory.create(AbstractSingletonContainer.java:745)
+	at com.sun.ejb.containers.AbstractSingletonContainer.instantiateSingletonInstance(AbstractSingletonContainer.java:477)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.initializeSingleton(SingletonLifeCycleManager.java:219)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.initializeSingleton(SingletonLifeCycleManager.java:180)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.doStartup(SingletonLifeCycleManager.java:159)
+	at org.glassfish.ejb.startup.EjbApplication.start(EjbApplication.java:171)
+	at org.glassfish.internal.data.EngineRef.start(EngineRef.java:123)
+	at org.glassfish.internal.data.ModuleInfo.start(ModuleInfo.java:292)
+	at org.glassfish.internal.data.ApplicationInfo.start(ApplicationInfo.java:361)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.initialize(ApplicationLifecycle.java:633)
+	at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:574)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:556)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:552)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:551)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:582)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:574)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:573)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1497)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1879)
+	at org.glassfish.deployment.autodeploy.AutoOperation.run(AutoOperation.java:149)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.deploy(AutoDeployer.java:532)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.deployAll(AutoDeployer.java:437)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.run(AutoDeployer.java:371)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.run(AutoDeployer.java:362)
+	at org.glassfish.deployment.autodeploy.AutoDeployService$1.run(AutoDeployService.java:231)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: jakarta.ejb.CreateException: Initialization failed for Singleton BusinessHoursScheduler
+	at com.sun.ejb.containers.AbstractSingletonContainer.createSingletonEJB(AbstractSingletonContainer.java:598)
+	at com.sun.ejb.containers.AbstractSingletonContainer$SingletonContextFactory.create(AbstractSingletonContainer.java:743)
+	... 34 more
+Caused by: jakarta.ejb.EJBException
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createTimerInternal(EJBTimerServiceWrapper.java:331)
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createSingleActionTimer(EJBTimerServiceWrapper.java:141)
+	at com.prime.GenericIntervalScheduler.scheduleNextRun(GenericIntervalScheduler.kt:69)
+	at com.prime.GenericIntervalScheduler.init(GenericIntervalScheduler.kt:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.BeanCallbackInterceptor.intercept(InterceptorManager.java:1022)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.CallbackInvocationContext.proceed(CallbackInvocationContext.java:204)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:163)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.init(SystemInterceptorProxy.java:125)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.CallbackInterceptor.intercept(InterceptorManager.java:978)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.CallbackInvocationContext.proceed(CallbackInvocationContext.java:204)
+	at org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:81)
+	at org.jboss.weld.module.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.CallbackInterceptor.intercept(InterceptorManager.java:978)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:418)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:381)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:2071)
+	at com.sun.ejb.containers.AbstractSingletonContainer.createSingletonEJB(AbstractSingletonContainer.java:585)
+	... 35 more
+Caused by: jakarta.ejb.CreateException: Persistent timers are not supported in this setup
+	at com.sun.ejb.containers.EJBTimerService._createTimer(EJBTimerService.java:934)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:899)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:830)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:795)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:784)
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createTimerInternal(EJBTimerServiceWrapper.java:326)
+	... 66 more
+]]
+
+[2024-10-13T18:14:23.314-0400] [Payara 6.2024.4] [SEVERE] [] [javax.enterprise.system.core] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663314] [levelValue: 1000] [[
+  Exception while loading the app]]
+
+[2024-10-13T18:14:23.316-0400] [Payara 6.2024.4] [SEVERE] [AS-WEB-GLUE-00192] [jakarta.enterprise.web] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663316] [levelValue: 1000] [[
+  Undeployment failed for context /scheduler-demo]]
+
+[2024-10-13T18:14:23.320-0400] [Payara 6.2024.4] [SEVERE] [] [javax.enterprise.system.core] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663320] [levelValue: 1000] [[
+  Exception while loading the app : jakarta.ejb.CreateException: Initialization failed for Singleton BusinessHoursScheduler
+jakarta.ejb.CreateException: Initialization failed for Singleton BusinessHoursScheduler
+	at com.sun.ejb.containers.AbstractSingletonContainer.createSingletonEJB(AbstractSingletonContainer.java:598)
+	at com.sun.ejb.containers.AbstractSingletonContainer$SingletonContextFactory.create(AbstractSingletonContainer.java:743)
+	at com.sun.ejb.containers.AbstractSingletonContainer.instantiateSingletonInstance(AbstractSingletonContainer.java:477)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.initializeSingleton(SingletonLifeCycleManager.java:219)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.initializeSingleton(SingletonLifeCycleManager.java:180)
+	at org.glassfish.ejb.startup.SingletonLifeCycleManager.doStartup(SingletonLifeCycleManager.java:159)
+	at org.glassfish.ejb.startup.EjbApplication.start(EjbApplication.java:171)
+	at org.glassfish.internal.data.EngineRef.start(EngineRef.java:123)
+	at org.glassfish.internal.data.ModuleInfo.start(ModuleInfo.java:292)
+	at org.glassfish.internal.data.ApplicationInfo.start(ApplicationInfo.java:361)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.initialize(ApplicationLifecycle.java:633)
+	at org.glassfish.deployment.admin.DeployCommand.execute(DeployCommand.java:574)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:556)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:552)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:551)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:582)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$3.run(CommandRunnerImpl.java:574)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/javax.security.auth.Subject.doAs(Subject.java:376)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:573)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1497)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1879)
+	at org.glassfish.deployment.autodeploy.AutoOperation.run(AutoOperation.java:149)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.deploy(AutoDeployer.java:532)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.deployAll(AutoDeployer.java:437)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.run(AutoDeployer.java:371)
+	at org.glassfish.deployment.autodeploy.AutoDeployer.run(AutoDeployer.java:362)
+	at org.glassfish.deployment.autodeploy.AutoDeployService$1.run(AutoDeployService.java:231)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: jakarta.ejb.EJBException
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createTimerInternal(EJBTimerServiceWrapper.java:331)
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createSingleActionTimer(EJBTimerServiceWrapper.java:141)
+	at com.prime.GenericIntervalScheduler.scheduleNextRun(GenericIntervalScheduler.kt:69)
+	at com.prime.GenericIntervalScheduler.init(GenericIntervalScheduler.kt:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.BeanCallbackInterceptor.intercept(InterceptorManager.java:1022)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.CallbackInvocationContext.proceed(CallbackInvocationContext.java:204)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:163)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.init(SystemInterceptorProxy.java:125)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.CallbackInterceptor.intercept(InterceptorManager.java:978)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.CallbackInvocationContext.proceed(CallbackInvocationContext.java:204)
+	at org.jboss.weld.module.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:81)
+	at org.jboss.weld.module.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at com.sun.ejb.containers.interceptors.CallbackInterceptor.intercept(InterceptorManager.java:978)
+	at com.sun.ejb.containers.interceptors.CallbackChainImpl.invokeNext(CallbackChainImpl.java:72)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:418)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:381)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:2071)
+	at com.sun.ejb.containers.AbstractSingletonContainer.createSingletonEJB(AbstractSingletonContainer.java:585)
+	... 35 more
+Caused by: jakarta.ejb.CreateException: Persistent timers are not supported in this setup
+	at com.sun.ejb.containers.EJBTimerService._createTimer(EJBTimerService.java:934)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:899)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:830)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:795)
+	at com.sun.ejb.containers.EJBTimerService.createTimer(EJBTimerService.java:784)
+	at com.sun.ejb.containers.EJBTimerServiceWrapper.createTimerInternal(EJBTimerServiceWrapper.java:326)
+	... 66 more
+]]
+
+[2024-10-13T18:14:23.321-0400] [Payara 6.2024.4] [WARNING] [NCLS-DEPLOYMENT-02036] [javax.enterprise.system.tools.deployment.autodeploy] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663321] [levelValue: 900] [[
+  Error occurred during deployment: Exception while loading the app : jakarta.ejb.CreateException: Initialization failed for Singleton BusinessHoursScheduler. Please see server.log for more details.]]
+
+[2024-10-13T18:14:23.322-0400] [Payara 6.2024.4] [WARNING] [NCLS-DEPLOYMENT-02036] [javax.enterprise.system.tools.deployment.autodeploy] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663322] [levelValue: 900] [[
+  [AutoDeploy] Autodeploy failed : /Users/bala/_app_servers/payara6/glassfish/domains/domain1/autodeploy/SchedulerDemo-1.0-SNAPSHOT.war.]]
+
+[2024-10-13T18:14:23.322-0400] [Payara 6.2024.4] [WARNING] [NCLS-DEPLOYMENT-02041] [javax.enterprise.system.tools.deployment.autodeploy] [tid: _ThreadID=124 _ThreadName=payara-executor-service-scheduled-task] [timeMillis: 1728857663322] [levelValue: 900] [[
+  Attempt to create file /Users/bala/_app_servers/payara6/glassfish/domains/domain1/autodeploy/.autodeploystatus/SchedulerDemo-1.0-SNAPSHOT.war failed; no further information.]]
